@@ -24,7 +24,7 @@ namespace FogOfWar
             ImageSource = imageSource;
             ImageShadow = new Bitmap(imageSource);
             ImageShadow = MapImage.ShadowImageBlack(ImageShadow);
-            PictureBox.Image = ImageShadow;
+            PictureBox.Image = new Bitmap(ImageShadow);
         }
 
         public void UpdateMap(Point startingPoint, Point endingPoint)
@@ -36,6 +36,11 @@ namespace FogOfWar
                 PictureBox.Image = map;
                 Console.WriteLine("Client");
             }
+        }
+
+        public void ResetMap()
+        {
+            PictureBox.Image = ImageShadow;
         }
     }
 }

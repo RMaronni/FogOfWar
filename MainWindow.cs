@@ -28,17 +28,8 @@ namespace FogOfWar
             Client.Show();
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loadImageToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LoadMapMenuItem_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -48,9 +39,20 @@ namespace FogOfWar
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     SetImages(openFileDialog.FileName);
-                    PictureBox.Image = ImageShadow;
+                    PictureBox.Image = new Bitmap(ImageShadow);
                 }
             }
+        }
+
+        private void ResetMapMenuItem_Click(object sender, EventArgs e)
+        {
+            PictureBox.Image = ImageShadow;
+            Client.ResetMap();
+        }
+
+        private void QuitMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void PictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -118,13 +120,6 @@ namespace FogOfWar
             Client.SetImages(ImageSource);
         }
 
-
-
         
-      
-
-
-
-
     }
 }
