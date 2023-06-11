@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FogOfWar", "FogOfWar.csproj", "{FDB77B4A-DE1B-4654-BD4C-AACD3337229C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDB77B4A-DE1B-4654-BD4C-AACD3337229C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB77B4A-DE1B-4654-BD4C-AACD3337229C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB77B4A-DE1B-4654-BD4C-AACD3337229C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB77B4A-DE1B-4654-BD4C-AACD3337229C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C78FCEAE-C2FE-4D25-BFDE-A3CCA7E80AAF}
+	EndGlobalSection
+EndGlobal
