@@ -1,5 +1,5 @@
 # FogOfWar
 
-![main_window](https://imgur.com/kgm8T7Q)
+![main_window](https://imgur.com/a/gWjFgpy)
 
 ![client_window](https://imgur.com/cwqr6Rl)
