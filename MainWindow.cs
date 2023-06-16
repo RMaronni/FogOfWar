@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace FogOfWar
 {
+    /// <summary>
+    /// Class <c>MainWindow</c> is the main window where the Dungeon Master defines the map image and the areas to be displayed.
+    /// </summary>
     public partial class MainWindow : Form
     {
         private bool IsDrawing = false;
@@ -18,9 +21,11 @@ namespace FogOfWar
         private Image ImageSource = null;
         private Image ImageShadow = null;
         private ClientWindow Client = null;
-        
-        
 
+
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +34,9 @@ namespace FogOfWar
         }
 
 
+        /// <summary>
+        /// Method <c>LoadMapMenuItem_Click</c> sets the Click event to LoadMapMenuItem control.
+        /// </summary>
         private void LoadMapMenuItem_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -44,24 +52,40 @@ namespace FogOfWar
             }
         }
 
+
+        /// <summary>
+        /// Method <c>ResetMapMenuItem_Click</c> sets the Click event to ResetMapMenuItem control.
+        /// </summary>
         private void ResetMapMenuItem_Click(object sender, EventArgs e)
         {
             PictureBox.Image = ImageShadow;
             Client.ResetMap();
         }
 
+
+        /// <summary>
+        /// Method <c>QuitMenuItem_Click</c> sets the Click event to QuitMenuItem control.
+        /// </summary>
         private void QuitMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+
+        /// <summary>
+        /// Method <c>PictureBox_MouseDown</c> sets the MouseDown event to PictureBox control.
+        /// </summary>
         private void PictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             IsDrawing = true;
             StartingPoint = e.Location;
             Console.WriteLine(StartingPoint);
         }
-            
+
+
+        /// <summary>
+        /// Method <c>PictureBox_MouseUp</c> sets the MouseUp event to PictureBox control.
+        /// </summary>
         private void PictureBox_MouseUp(object sender, MouseEventArgs e)
         {    
             if(IsDrawing)
@@ -81,6 +105,9 @@ namespace FogOfWar
         }
 
 
+        /// <summary>
+        /// Method <c>GetScaledImageLocation</c> gets the pixel on the image associated to a pixel on the control PictureBox.
+        /// </summary>
         private Point GetScaledImageLocation(Point location)
         {
             double imgWidth = PictureBox.Image.Width;
@@ -112,6 +139,9 @@ namespace FogOfWar
         }
 
 
+        /// <summary>
+        /// Method <c>SetImages</c> sets shadow and source image properties.
+        /// </summary>
         private void SetImages(string filePath)
         {
             ImageSource = new Bitmap(filePath);
@@ -119,7 +149,5 @@ namespace FogOfWar
             ImageShadow = MapImage.ShadowImageGray(ImageShadow);
             Client.SetImages(ImageSource);
         }
-
-        
     }
 }
