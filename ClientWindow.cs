@@ -10,15 +10,25 @@ using System.Windows.Forms;
 
 namespace FogOfWar
 {
+    /// <summary>
+    /// Class <c>ClientWindow</c> is the window displayed to the players.
+    /// </summary>
     public partial class ClientWindow : Form
     {
         private Image ImageSource = null;
         private Image ImageShadow = null;
+
+        /// <summary>
+        /// Constructor method.
+        /// </summary>
         public ClientWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Method <c>SetImages</c> sets shadow and source image properties.
+        /// </summary>
         public void SetImages(Image imageSource)
         {
             ImageSource = imageSource;
@@ -27,6 +37,9 @@ namespace FogOfWar
             PictureBox.Image = new Bitmap(ImageShadow);
         }
 
+        /// <summary>
+        /// Method <c>UpdateMap</c> updates the map with the new revealed area.
+        /// </summary>
         public void UpdateMap(Point startingPoint, Point endingPoint)
         {
             Image map = PictureBox.Image;
@@ -38,6 +51,9 @@ namespace FogOfWar
             }
         }
 
+        /// <summary>
+        /// Method <c>ResetMap</c> resets the map to a total hidden map.
+        /// </summary>
         public void ResetMap()
         {
             PictureBox.Image = ImageShadow;
